@@ -119,7 +119,30 @@ class CSVWriter():
         self.file.close()
 
 
+# Performs validation that all of the keys are set.
+def validate():
+    valid = True
+    if AWS_ACCESS_KEY_ID == "<your-access-key-here>":
+        print ("AWS_ACCESS_KEY_ID not set! Change the value in "
+               "scrape_metadata.py.")
+        valid = False
+    if AWS_SECRET_ACCESS_KEY == "<your-secret-access-key-here>":
+        print ("AWS_SECRET_ACCESS_KEY not set! Change the value in "
+               "scrape_metadata.py.")
+        valid = False
+    if BUCKET_NAME == "<bucket-name>":
+        print ("BUCKET_NAME not set! Change the value in "
+               "scrape_metadata.py.")
+        valid = False
+
+    if not valid:
+        exit(1)
+
+
+# Runs the metadata downloader.
 def main():
+    validate()
+
     scraper = FileMetadataScraper(AWS_ACCESS_KEY_ID,
                                   AWS_SECRET_ACCESS_KEY,
                                   BUCKET_NAME)
