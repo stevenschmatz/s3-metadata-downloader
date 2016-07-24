@@ -14,6 +14,7 @@ This tool provides the capabilities to:
 Installation uses `pip` and `virtualenv`.
 
 ```
+$ virtualenv env
 $ source env/bin/activate
 $ pip install -r requirements.txt
 ```
