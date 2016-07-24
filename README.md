@@ -20,8 +20,6 @@ $ pip install -r requirements.txt
 
 Then, in scrape_metadata.py, make sure to set the values for `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `BUCKET_NAME`.
 
----
-
 ## Usage
 
 ### Options
